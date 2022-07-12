@@ -1,0 +1,40 @@
+#TODO
+1. Revert with number of bytes to revert (-l).	Done
+
+2. Output in C include file style.	#DONE#
+	Changing separator to ", ".
+	set group count = 1
+	plain dump.
+	don't print separator at beginning of line.
+	print separator after the last byte of line.
+   
+3. Colors!!
+	DONE
+	add for last row
+
+4. Autoskip
+	check if row is all same bytes 'byte'
+		set 'byte' accordingly
+		print 'byte' (in the middle)
+
+	check if 'prev' is valid and equal to 'byte'
+		print nothing
+		skip and add the no: of bytes to 'cnt'
+	else	// new byte pattern
+		store the byte in a variable 'prev'
+		print 'byte' (in the middle)
+
+5. Add support for reverting with plain and no newline dumps 
+	extra byte creeps in at the end for some i,j value
+	DONE
+
+6. Add tests for --seek and --len
+
+7. Reverting partial dumps. i.e starting from offset != 0. fill the previous bytes with 0 by seeking.
+	fill with 0 if printing to stdout
+	seek if writing to file
+	DONE
+
+8. Patch bytes in place
+
+9. Little endian
